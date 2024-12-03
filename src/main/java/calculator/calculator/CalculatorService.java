@@ -2,8 +2,9 @@ package calculator.calculator;
 
 import org.springframework.stereotype.Service;
 
+// everything that matters
 @Service
-public class calculatorWork implements calculatorInterface {
+public class CalculatorService implements CalculatorInterface {
     public String firstCalculator() {
         return "Добро пожаловать в калькулятор";
     }
