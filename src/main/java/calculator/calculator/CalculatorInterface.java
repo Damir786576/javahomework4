@@ -1,6 +1,6 @@
 package calculator.calculator;
 
-public interface calculatorInterface {
+public interface CalculatorInterface {
     String firstCalculator();
     int plusCalculator(int plusNum1, int plusNum2);
     int minusCalculator(int minusNum1, int minusNum2);
