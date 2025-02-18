@@ -1,5 +1,6 @@
 package calculator.calculator;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,7 +38,7 @@ public class Calculator {
         if (minusNum1 == null || minusNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(minusNum1, minusNum2);
+        return CalculatorService.minusCalculator(minusNum1, minusNum2);
     }
 
     // guest writing two numbers, the program multiply them
@@ -48,7 +49,7 @@ public class Calculator {
         if (multiplyNum1 == null || multiplyNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(multiplyNum1, multiplyNum2);
+        return CalculatorService.multiplyCalculator(multiplyNum1, multiplyNum2);
     }
 
     // guest writing two numbers, the program divide them
@@ -59,6 +60,9 @@ public class Calculator {
         if (divideNum1 == null || divideNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(divideNum1, divideNum2);
+        if (divideNum2 == 0) {
+            throw new IllegalArgumentException("Деление на ноль невозможно.");
+        }
+        return CalculatorService.divideCalculator(divideNum1, divideNum2);
     }
 }

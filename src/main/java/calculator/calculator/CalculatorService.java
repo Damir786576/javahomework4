@@ -21,11 +21,8 @@ public class CalculatorService implements CalculatorInterface {
         return multiplyNum1 * multiplyNum2;
     }
 
-    public String divideCalculator(int divideNum1, int divideNum2) {
-        if (divideNum2 == 0) {
-            return "Ошибка: Деление на ноль невозможно.";
-        }
-        return String.valueOf(divideNum1 / divideNum2);
+    public int divideCalculator(int divideNum1, int divideNum2) {
+        return divideNum1 / divideNum2;
     }
 
 
