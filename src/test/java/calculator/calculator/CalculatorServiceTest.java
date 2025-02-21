@@ -1,13 +1,34 @@
 package calculator.calculator;
 
-public class CalculatorServiceTest {
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-    public void Сalculations(){
-        int plusNum1 = 10;
 
+class CalculatorServiceImplTest {
+    private final CalculatorService calculatorService = new CalculatorService();
+
+
+    @Test
+    void testAdd() {
+        assertEquals("10 + 10 = 20", calculatorService.plusCalculator(10, 10));
+        assertEquals("20 + 20 = 40", calculatorService.plusCalculator(20, 20));
     }
 
+    @Test
+    void testMinus() {
+        assertEquals("10 - 10 = 0", calculatorService.minusCalculator(10, 10));
+        assertEquals("20 - 20 = 0", calculatorService.minusCalculator(20, 20));
+    }
 
+    @Test
+    void testMultiply() {
+        assertEquals("10 * 10 = 100", calculatorService.multiplyCalculator(10, 10));
+        assertEquals("20 * 20 = 400", calculatorService.multiplyCalculator(20, 20));
+    }
 
-
+    @Test
+    void testDivide() {
+        assertEquals("10 / 10 = 1", calculatorService.divideCalculator(10, 10));
+        assertEquals("20 / 20 = 1", calculatorService.divideCalculator(20, 20));
+    }
 }

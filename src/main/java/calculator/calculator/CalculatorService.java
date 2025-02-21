@@ -9,22 +9,20 @@ public class CalculatorService implements CalculatorInterface {
         return "Добро пожаловать в калькулятор";
     }
 
-    public int plusCalculator(int plusNum1, int plusNum2) {
-        return plusNum1 + plusNum2;
+    @Override
+    public String plusCalculator(int plusNum1, int plusNum2) {
+        return plusNum1 + " + " + plusNum2 + " = " + (plusNum1 + plusNum2);
     }
 
-    public int minusCalculator(int minusNum1, int minusNum2) {
-        return minusNum1 - minusNum1;
+    public String minusCalculator(int minusNum1, int minusNum2) {
+        return minusNum1 + " - " + minusNum2 + " = " + (minusNum1 - minusNum2);
     }
 
-    public int multiplyCalculator(int multiplyNum1, int multiplyNum2) {
-        return multiplyNum1 * multiplyNum2;
+    public String multiplyCalculator(int multiplyNum1, int multiplyNum2) {
+        return multiplyNum1 + " * " + multiplyNum2 + " = " + (multiplyNum1 * multiplyNum2);
     }
 
-    public int divideCalculator(int divideNum1, int divideNum2) {
-        return divideNum1 / divideNum2;
+    public String divideCalculator(int divideNum1, int divideNum2) {
+        return divideNum1 + " / " + divideNum2 + " = " + (divideNum1 / divideNum2);
     }
-
-
-
 }

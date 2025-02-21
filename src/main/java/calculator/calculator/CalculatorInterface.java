@@ -2,8 +2,8 @@ package calculator.calculator;
 
 public interface CalculatorInterface {
     String firstCalculator();
-    int plusCalculator(int plusNum1, int plusNum2);
-    int minusCalculator(int minusNum1, int minusNum2);
-    int multiplyCalculator(int multiplyNum1, int multiplyNum2);
-    int divideCalculator(int divideNum1, int divideNum2);
+    String plusCalculator(int plusNum1, int plusNum2);
+    String minusCalculator(int minusNum1, int minusNum2);
+    String multiplyCalculator(int multiplyNum1, int multiplyNum2);
+    String divideCalculator(int divideNum1, int divideNum2);
 }

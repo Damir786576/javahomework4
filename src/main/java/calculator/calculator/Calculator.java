@@ -21,7 +21,7 @@ public class Calculator {
 
     // guest writing two numbers, the program plus them
     @GetMapping(path = "/plus")
-    public int plusCalculator(
+    public String plusCalculator(
             @RequestParam(name = "num1", required = false) Integer plusNum1,
             @RequestParam(name = "num2", required = false) Integer plusNum2) {
         if (plusNum1 == null || plusNum2 == null) {
@@ -32,7 +32,7 @@ public class Calculator {
 
     // guest writing two numbers, the program minus them
     @GetMapping(path = "/minus")
-    public int minusCalculator(
+    public String minusCalculator(
             @RequestParam(name = "num1", required = false) Integer minusNum1,
             @RequestParam(name = "num2", required = false) Integer minusNum2) {
         if (minusNum1 == null || minusNum2 == null) {
@@ -43,7 +43,7 @@ public class Calculator {
 
     // guest writing two numbers, the program multiply them
     @GetMapping(path = "/multiply")
-    public int multiplyCalculator(
+    public String multiplyCalculator(
             @RequestParam(name = "num1", required = false) Integer multiplyNum1,
             @RequestParam(name = "num2", required = false) Integer multiplyNum2) {
         if (multiplyNum1 == null || multiplyNum2 == null) {
@@ -54,7 +54,7 @@ public class Calculator {
 
     // guest writing two numbers, the program divide them
     @GetMapping(path = "/divide")
-    public int divideCalculator(
+    public String divideCalculator(
             @RequestParam(name = "num1", required = false) Integer divideNum1,
             @RequestParam(name = "num2", required = false) Integer divideNum2) {
         if (divideNum1 == null || divideNum2 == null) {
