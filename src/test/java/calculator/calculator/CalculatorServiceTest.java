@@ -1,7 +1,9 @@
 package calculator.calculator;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 class CalculatorServiceImplTest {
@@ -30,5 +32,11 @@ class CalculatorServiceImplTest {
     void testDivide() {
         assertEquals("10 / 10 = 1", calculatorService.divideCalculator(10, 10));
         assertEquals("20 / 20 = 1", calculatorService.divideCalculator(20, 20));
+    }
+
+    @Test
+    void testDivizionByZero() {
+        Exception exception = assertThrows(DivisionByZeroException.class, () -> calculatorService.divideCalculator(5, 0));
+        assertEquals("Ошибка: деление на 0 запрещено!", exception.getMessage());
     }
 }
