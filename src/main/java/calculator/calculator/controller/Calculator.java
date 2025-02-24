@@ -1,5 +1,6 @@
-package calculator.calculator;
+package calculator.calculator.controller;
 
+import calculator.calculator.service.CalculatorInterface;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ public class Calculator {
 
     // guest writing two numbers, the program plus them
     @GetMapping(path = "/plus")
-    public int plusCalculator(
+    public String plusCalculator(
             @RequestParam(name = "num1", required = false) Integer plusNum1,
             @RequestParam(name = "num2", required = false) Integer plusNum2) {
         if (plusNum1 == null || plusNum2 == null) {
@@ -31,34 +32,37 @@ public class Calculator {
 
     // guest writing two numbers, the program minus them
     @GetMapping(path = "/minus")
-    public int minusCalculator(
+    public String minusCalculator(
             @RequestParam(name = "num1", required = false) Integer minusNum1,
             @RequestParam(name = "num2", required = false) Integer minusNum2) {
         if (minusNum1 == null || minusNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(minusNum1, minusNum2);
+        return CalculatorService.minusCalculator(minusNum1, minusNum2);
     }
 
     // guest writing two numbers, the program multiply them
     @GetMapping(path = "/multiply")
-    public int multiplyCalculator(
+    public String multiplyCalculator(
             @RequestParam(name = "num1", required = false) Integer multiplyNum1,
             @RequestParam(name = "num2", required = false) Integer multiplyNum2) {
         if (multiplyNum1 == null || multiplyNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(multiplyNum1, multiplyNum2);
+        return CalculatorService.multiplyCalculator(multiplyNum1, multiplyNum2);
     }
 
     // guest writing two numbers, the program divide them
     @GetMapping(path = "/divide")
-    public int divideCalculator(
+    public String divideCalculator(
             @RequestParam(name = "num1", required = false) Integer divideNum1,
             @RequestParam(name = "num2", required = false) Integer divideNum2) {
         if (divideNum1 == null || divideNum2 == null) {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
-        return CalculatorService.plusCalculator(divideNum1, divideNum2);
+        if (divideNum2 == 0) {
+            throw new IllegalArgumentException("Ошибка: деление на 0 запрещено!");
+        }
+        return CalculatorService.divideCalculator(divideNum1, divideNum2);
     }
 }
