@@ -1,6 +1,6 @@
-package calculator.calculator;
+package calculator.calculator.controller;
 
-import org.springframework.http.ResponseEntity;
+import calculator.calculator.service.CalculatorInterface;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,7 +61,7 @@ public class Calculator {
             throw new IllegalArgumentException("Ошибка: оба параметра num1 и num2 должны быть предоставлены.");
         }
         if (divideNum2 == 0) {
-            throw new IllegalArgumentException("Деление на ноль невозможно.");
+            throw new IllegalArgumentException("Ошибка: деление на 0 запрещено!");
         }
         return CalculatorService.divideCalculator(divideNum1, divideNum2);
     }
